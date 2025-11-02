@@ -11,15 +11,18 @@ function calculateRentalCost(days) {
   const aluguelSeteDias = aluguelDia - descontoSeteDias;
   const aluguelTresDias = aluguelDia - descontoTresDias;
 
-  if (days < 3) {
+  const tresDias = 3;
+  const seteDias = 7;
+
+  if (days < tresDias) {
     return aluguelDia;
   }
 
-  if (days >= 3 && days < 7) {
+  if (days >= tresDias && days < seteDias) {
     return aluguelTresDias;
   }
 
-  if (days >= 7) {
+  if (days >= seteDias) {
     return aluguelSeteDias;
   }
 }
