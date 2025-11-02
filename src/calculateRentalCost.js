@@ -4,20 +4,23 @@
  * @return {number}
  */
 function calculateRentalCost(days) {
-  const aluguelDia = days * 40;
-  const descontoTresDias = aluguelDia - 20;
-  const descontoSeteDias = aluguelDia - 50;
+  const valorPorDia = 40;
+  const aluguelDia = days * valorPorDia;
+  const descontoTresDias = 20;
+  const descontoSeteDias = 50;
+  const aluguelSeteDias = aluguelDia - descontoSeteDias;
+  const aluguelTresDias = aluguelDia - descontoTresDias;
 
   if (days < 3) {
     return aluguelDia;
   }
 
   if (days >= 3 && days < 7) {
-    return descontoTresDias;
+    return aluguelTresDias;
   }
 
   if (days >= 7) {
-    return descontoSeteDias;
+    return aluguelSeteDias;
   }
 }
 
